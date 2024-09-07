@@ -14,7 +14,7 @@ const articlesRouter = Router()
 articlesRouter.route('/').get(getArticlesHandler).post(validateArticlePost, postArticlesHandler)
 
 articlesRouter
-    .route('/:userId')
+    .route('/:articleId')
     .get(validateParamsArticleId, getArticleByIdHandler)
     .put(validateParamsArticleId, validateArticlePut, putArticleByIdHandler)
     .delete(validateParamsArticleId, deleteArticleByIdHandler)

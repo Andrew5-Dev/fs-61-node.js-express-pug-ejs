@@ -1,5 +1,10 @@
 const getArticlesHandler = (req, res) => {
-    res.send('Get articles route')
+    const articles = [
+        { name: 'BTRC', body: 'BTRC forms committee to develop guidelines for satellite internet' },
+        { name: 'NIST', body: 'NIST releases new digital identity and AI guidelines for contractors' }
+    ]
+    const title = 'Articles List'
+    res.render('index', { articles, title })
 }
 
 const postArticlesHandler = (req, res) => {
@@ -8,7 +13,23 @@ const postArticlesHandler = (req, res) => {
 
 const getArticleByIdHandler = (req, res) => {
     const {articleId} = req.params
-    res.send(`Get article by Id route: ${articleId}`)
+    if (articleId === 1) {
+        const articles =[
+            { name: 'BTRC', body: 'BTRC forms committee to develop guidelines for satellite internet' },
+        ]
+        const title = 'Article Id 1'
+        res.render('index', { articles, title })
+    }
+    if (articleId === 2) {
+        const articles =[
+            { name: 'NIST', body: 'NIST releases new digital identity and AI guidelines for contractors' }
+        ]
+        const title = 'Article Id 2'
+        res.render('index', { articles, title })
+    }
+
+    res.send(`Get user by Id route: ${articleId}`)
+
 }
 
 const putArticleByIdHandler = (req, res) => {

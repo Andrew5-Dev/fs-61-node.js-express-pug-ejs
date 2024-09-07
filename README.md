@@ -7,7 +7,7 @@ npm install
 Run Development Server: 
 
 - npm run dev. 
-- 
+
 Run Production Server:
 
 
@@ -19,9 +19,9 @@ Main Server routes:
 
 '/' 
 
-'/users' use validation (POST username and password)
+'/users' use validation (POST username and password), Інтеграція шаблонізатора PUG
 
-'/articles' use validation 
+'/articles' use validation, Інтеграція шаблонізатора EJS
 
 For test requests: POSTMAN https://www.postman.com
 
