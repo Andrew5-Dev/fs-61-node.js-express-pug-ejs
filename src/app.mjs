@@ -2,13 +2,16 @@ import express from 'express'
 import router from './routes/index.mjs'
 import {errors} from 'celebrate'
 import logRequests from './middlewares/log.mjs'
+import ejs from 'ejs'
 
 const PORT = 3000
 const app = express()
 
 app.set('view engine', 'pug')
 app.set('views', './src/views')
-//app.set('view engine', 'ejs')
+
+app.engine('ejs', ejs.renderFile);
+app.set('views-ejs', './src/views');
 
 app.use(express.json())
 app.use(logRequests)

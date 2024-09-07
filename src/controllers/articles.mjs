@@ -4,7 +4,7 @@ const getArticlesHandler = (req, res) => {
         { name: 'NIST', body: 'NIST releases new digital identity and AI guidelines for contractors' }
     ]
     const title = 'Articles List'
-    res.render('index', { articles, title })
+    res.render( 'index.ejs', { articles, title })
 }
 
 const postArticlesHandler = (req, res) => {
@@ -18,14 +18,14 @@ const getArticleByIdHandler = (req, res) => {
             { name: 'BTRC', body: 'BTRC forms committee to develop guidelines for satellite internet' },
         ]
         const title = 'Article Id 1'
-        res.render('index', { articles, title })
+        res.render('index.ejs', { articles, title })
     }
     if (articleId === 2) {
         const articles =[
             { name: 'NIST', body: 'NIST releases new digital identity and AI guidelines for contractors' }
         ]
         const title = 'Article Id 2'
-        res.render('index', { articles, title })
+        res.render('index.ejs', { articles, title })
     }
 
     res.send(`Get user by Id route: ${articleId}`)
