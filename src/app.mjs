@@ -8,17 +8,13 @@ const app = express()
 
 app.set('view engine', 'pug')
 app.set('views', './src/views')
+app.set('view engine', 'ejs');
+
+
 app.use(express.json())
 app.use(logRequests)
 app.use(router)
 app.use(errors())
-
-app.get('/users', (req, res) => {
-    const user = { name: 'John', age: 30 }
-    const title = 'Fruits'
-
-    res.render('index', { items, user, title })
-})
 
 app.use((err, req, res, next) => {
     if (!res.headersSent) {
